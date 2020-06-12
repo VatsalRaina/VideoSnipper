@@ -1,3 +1,4 @@
+from backend import make_snips
 import tkinter
 # from the tkinter library 
 from tkinter import *
@@ -72,6 +73,7 @@ def genFiles():
     else:
         # Save at same location as 'filename'
         label_file_explorer.configure(text="File saved in current directory!")
+        make_snips(bobname, txt.get("1.0", END),  clipLen.get())
         print(bobname)
         print(txt.get("1.0", END))
 
