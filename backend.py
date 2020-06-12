@@ -11,7 +11,7 @@ def make_snips(input_file, times, snippet_length):
     # Extract the times into a list
     times_list = times.split()
 
-    output_clip_prefix = "top"
+    output_clip_prefix = "clip"
     for clip_num, start_time in enumerate(times_list):
 
         # Get time in correct format
