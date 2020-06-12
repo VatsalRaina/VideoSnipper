@@ -12,6 +12,7 @@ def make_snips(input_file, times, snippet_length):
     times_list = times.split()
 
     output_clip_prefix = "clip"
+    clip_num_shift = 0
     for clip_num, start_time in enumerate(times_list):
 
         # Get time in correct format
@@ -27,5 +28,5 @@ def make_snips(input_file, times, snippet_length):
         clipped = clip_no_audio.subclip(start, end)
 
         # Write to file
-        out_name = output_clip_prefix + str(clip_num)+".mp4"
+        out_name = output_clip_prefix + str(clip_num+clip_num_shift)+".mp4"
         clipped.write_videofile(out_name)
