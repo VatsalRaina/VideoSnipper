@@ -9,14 +9,11 @@ def make_snips(input_file, times, snippet_length):
     clip_no_audio = clip.set_audio(None)
 
     # Extract the times into a list
-    times_list = times.split(' ')
-    print(times_list)
+    times_list = times.split()
 
     output_clip_prefix = "clip"
     for clip_num, start_time in enumerate(times_list):
 
-        print(start_time)
-        print(clip_num)
         # Get time in correct format
         parts = start_time.split(':')
         min = parts[0]
