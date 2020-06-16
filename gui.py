@@ -1,19 +1,19 @@
 from backend import make_snips
 import tkinter
-# from the tkinter library 
+# from the tkinter library
 from tkinter import *
 
-# import filedialog module 
+# import filedialog module
 from tkinter import filedialog
 from tkinter import scrolledtext
 
-# Create the root window 
+# Create the root window
 window = Tk()
 
-# Set window title 
-window.title('Video Snipper') 
-   
-# Set window size 
+# Set window title
+window.title('Video Snipper')
+
+# Set window size
 window.geometry("700x600")
 
 # Global variables
@@ -23,28 +23,28 @@ noChange = True
 def browseFiles():
     global bobname
     global noChange
-    filename = filedialog.askopenfilename(initialdir = "/", 
-                                          title = "Select a File", 
-                                          filetypes = (("Text files", 
-                                                         "*.mp4*"),
+    filename = filedialog.askopenfilename(initialdir = "/",
+                                          title = "Select a File",
+                                          filetypes = (("Text files",
+                                                         "*.mov*"),
                                                         ("all files", 
-                                                         "*.*"))) 
-       
-    # Change label contents 
+                                                         "*.*")))
+
+    # Change label contents
     label_file_explorer.configure(text="File Selected: "+filename)
     bobname = filename
     noChange = False
 
 
-# Create a File Explorer label 
-label_file_explorer = Label(window,  
-                            text = "Video Snipper", 
-                            width = 100, height = 4,  
-                            fg = "blue") 
+# Create a File Explorer label
+label_file_explorer = Label(window,
+                            text = "Video Snipper",
+                            width = 100, height = 4,
+                            fg = "blue")
 label_file_explorer.grid(column = 1, row = 1)
-   
-       
-button_explore = Button(window,  
+
+
+button_explore = Button(window,
                         text = "Select video",
                         font=("Arial Bold", 14),
                         bg = "lightblue",
@@ -77,12 +77,12 @@ def genFiles():
         print(bobname)
         print(txt.get("1.0", END))
 
-button_generate = Button(window,  
+button_generate = Button(window,
                         text = "Generate clips",
                         font=("Arial Bold", 14),
                         bg = "lightgreen",
                         command = genFiles)
 button_generate.grid(column=1, row=7)
 
-# Let the window wait for any events 
+# Let the window wait for any events
 window.mainloop()
